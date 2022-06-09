@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,7 +12,12 @@ class AppBarTopic extends ConsumerWidget {
     int page = 0;
     return Scaffold(
       appBar: AppBar(
-        shape: const Border(top: BorderSide(color: Colors.green, width: 3)),
+        shape: const Border(
+          top: BorderSide(
+            color: Colors.green,
+            width: 3,
+          ),
+        ),
         backgroundColor: Theme.of(context).cardColor,
         centerTitle: false,
         titleSpacing: 0,
@@ -36,23 +40,29 @@ class AppBarTopic extends ConsumerWidget {
                   children: [
                     SizedBox(
                       height: 30,
-                      child: Image.asset('assets/images/logo.png'),
+                      child: Image.network(
+                        'https://dartpad.dev/workshops.html?webserver=https://raw.githubusercontent.com/mhmzdev/flutter-guide-3.0/main/lib/images/logo.png',
+                      ),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                  flex: 2,
-                  child: Center(
-                    child: AutoSizeText(
-                        page == 0 ? "Accelerated Learning" : "FlashDecks",
-                        maxLines: 1,
-                        style: GoogleFonts.roboto(
-                            textStyle: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w300))),
-                  )),
+                flex: 2,
+                child: Center(
+                  child: Text(
+                    page == 0 ? "Accelerated Learning" : "FlashDecks",
+                    maxLines: 1,
+                    style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Expanded(
                 flex: 1,
                 child: Row(
