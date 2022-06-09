@@ -16,7 +16,7 @@
 - `surfaceTintColor`: Color of `appBar` background color overlay tint. Type `Color`.
 - `automaticallyImplyLeading`: Whether to implement `leading` widget on its own or not. e.g. Back Button appears by default if route to new screen.
 
-### leading
+## leading
 Below code shows the `leading` widget in the `appBar`.
 
 ```dart
