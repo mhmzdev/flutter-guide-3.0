@@ -1,21 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/app_bar/app_bar.dart';
+import 'package:flutter_course/state_management/dark_mode_state_manager.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    bool darkMode = ref.watch(darkModeStateManagerProvider);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Guide',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+        primaryColor: const Color(0xff333333),
+        backgroundColor: Colors.white,
+        shadowColor: const Color(0xff333333),
+        cardColor: Colors.white,
+
+        /* light theme settings */
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        backgroundColor: Colors.black,
+        primaryColor: Colors.white,
+        shadowColor: Colors.white24,
+        cardColor: Colors.black45,
+
+        /* dark theme settings */
+      ),
+      themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
       initialRoute: '/main',
       routes: {
         '/main': (context) => const MaterialChild(),
