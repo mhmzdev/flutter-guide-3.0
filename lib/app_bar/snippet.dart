@@ -53,8 +53,8 @@ class AppBarTopic extends StatelessWidget {
                   children: [
                     SizedBox(
                       height: 30,
-                      child: Image.network(
-                        'https://dartpad.dev/workshops.html?webserver=https://raw.githubusercontent.com/mhmzdev/flutter-guide-3.0/main/lib/images/logo.png',
+                      child: Image.asset(
+                        'assets/images/logo.png',
                       ),
                     ),
                   ],
