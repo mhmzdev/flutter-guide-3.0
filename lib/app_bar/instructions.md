@@ -18,11 +18,12 @@
 
 ### leading
 Below code shows the `leading` widget in the `appBar`.
+
 ```dart
-leading: BackButton(
-          onPressed: () => Navigator.pop(context),
-          color: Theme.of(context).brightness == Brightness.light
-              ? Colors.black
-              : Colors.white,
-        ),
+BackButton(
+onPressed: () => Navigator.pop(context),
+color: Theme.of(context).brightness == Brightness.light
+    ? Colors.black
+    : Colors.white,
+),
 ```
