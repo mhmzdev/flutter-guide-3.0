@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/app_bar/app_bar.dart';
+import 'package:flutter_course/app_bar/snippet.dart';
 import 'package:flutter_course/state_management/dark_mode_state_manager.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
